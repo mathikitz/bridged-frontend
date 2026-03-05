@@ -60,8 +60,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:600;display:flex;justify-content
 .hero-hearts-inline{display:inline-flex;gap:4px;vertical-align:middle;margin-left:8px}
 .hero-hearts-inline span{color:var(--rose);font-size:1.8rem}
 .hero-stats{display:flex;gap:0;margin-bottom:40px;opacity:0;animation:up .8s .32s forwards}
-.hstat{padding:22px 32px;border:1.5px solid var(--border);border-right:none;flex:1;transition:border-color .2s,background .2s;position:relative}
-.hstat:last-child{border-right:1.5px solid var(--border)}
+.hstat{padding:22px 32px;border:1.5px solid var(--border);flex:1;transition:border-color .2s,background .2s;position:relative;margin-right:-1.5px}
+.hstat:last-child{margin-right:0}
 .hstat:hover{background:var(--card);border-color:var(--cam)}
 .hstat-num{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,3rem);font-style:italic;color:var(--cam);line-height:1;display:block}
 .hstat-label{font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-top:6px;display:block}
@@ -219,9 +219,8 @@ textarea{resize:vertical;min-height:80px}
 @media(max-width:768px){
   nav{padding:14px 20px}.nav-deadline{display:none}
   .hero{padding:100px 20px 56px}
-  .hero-stats{flex-direction:column}
-  .hstat{border-right:1.5px solid var(--border);border-bottom:none}
-  .hstat:last-child{border-right:none}
+  .hero-stats{flex-direction:row}
+  .hstat{padding:16px 14px}
   .countdown-bar{padding:14px 20px;flex-wrap:wrap}.cd-deadline{display:none}
   .process,.faq,.final-cta,.manifesto{padding:72px 20px}
   .steps{grid-template-columns:1fr 1fr}
@@ -244,7 +243,7 @@ textarea{resize:vertical;min-height:80px}
     <span class="nav-wordmark">Br<span class="nav-i">i</span>dged</span>
   </span>
   <div class="nav-right">
-    <span class="nav-deadline">Closes <span>Fri 6 March · 23:59 GMT</span></span>
+    <span class="nav-deadline">Closes <span>Sat 7 March · 23:59 GMT</span></span>
     <button class="nav-cta" onclick="openModal()">Join the Drop</button>
   </div>
 </nav>
@@ -261,12 +260,12 @@ textarea{resize:vertical;min-height:80px}
   <div class="hero-stats">
     <div class="hstat"><span class="hstat-heart">♡</span><span class="hstat-num">1 in 5</span><span class="hstat-label">British students meet their life partner at university</span></div>
     <div class="hstat"><span class="hstat-heart">♡</span><span class="hstat-num">74%</span><span class="hstat-label">of Gen Z use dating apps — yet loneliness keeps rising</span></div>
-    <div class="hstat"><span class="hstat-heart">♡</span><span class="hstat-num">01</span><span class="hstat-label">match. that's all you get. make it count.</span></div>
+    <div class="hstat"><span class="hstat-heart">♡</span><span class="hstat-num" style="font-size:clamp(2.8rem,6vw,4.5rem);font-weight:700;font-style:italic;color:var(--cam);">1</span><span class="hstat-label">match. that's all you get. make it count.</span></div>
   </div>
   <p class="hero-desc">Bridged is an experimental pairing project for Cambridge students. Fill out a questionnaire. We run a compatibility model. You get one carefully chosen match — their initials first, their name 24 hours later. No swiping. Just one introduction.</p>
   <div class="hero-actions">
     <button class="btn-primary" onclick="openModal()">Join the Drop →</button>
-    <span class="hero-note">Free · @cam.ac.uk only · Closes 6 March</span>
+    <span class="hero-note">Free · @cam.ac.uk only · Closes 7 March</span>
   </div>
 </section>
 
@@ -279,7 +278,7 @@ textarea{resize:vertical;min-height:80px}
     <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><span class="cd-sublabel">min</span></div>
     <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><span class="cd-sublabel">sec</span></div>
   </div>
-  <span class="cd-deadline">Deadline: <b>Friday 6 March 2026 · 23:59 GMT</b></span>
+  <span class="cd-deadline">Deadline: <b>Saturday 7 March 2026 · 23:59 GMT</b></span>
 </div>
 
 <!-- SIGNUPS -->
@@ -396,7 +395,7 @@ textarea{resize:vertical;min-height:80px}
 <section class="final-cta">
   <p class="sec-idx" style="text-align:center;margin-bottom:14px;">[ join ]</p>
   <h2 class="sec-title">One introduction.<br><em>That might be all it takes.</em> ♡</h2>
-  <p class="final-cta-sub">@cam.ac.uk only · Free · Closes <b>Friday 6 March · 23:59 GMT</b></p>
+  <p class="final-cta-sub">@cam.ac.uk only · Free · Closes <b>Saturday 7 March · 23:59 GMT</b></p>
   <button class="btn-primary" onclick="openModal()">Join the Drop →</button>
   <div class="footer-line">
     <span>Bridged · Cambridge · Beta 2026</span>
@@ -602,7 +601,7 @@ textarea{resize:vertical;min-height:80px}
     <div class="sw">
       <div class="sg">♡</div>
       <p class="st">You're in the drop.</p>
-      <p class="sm">You're in. Your match is coming within the next week — trust us, the wait is worth it. ♡<br><br>Closes <b>Friday 6 March · 23:59 GMT</b>.</p>
+      <p class="sm">You're in. Your match is coming within the next week — trust us, the wait is worth it. ♡<br><br>Closes <b>Saturday 7 March · 23:59 GMT</b>.</p>
     </div>
   </div>
 </div>
@@ -632,7 +631,7 @@ document.addEventListener('mousemove',e=>{$cur.style.left=e.clientX+'px';$cur.st
 })();
 
 /* countdown */
-const DL=new Date('2026-03-07T00:59:00Z');
+const DL=new Date('2026-03-08T00:59:00Z');
 function tick(){
   const d=DL-Date.now();
   if(d<=0){document.querySelector('.countdown-bar').innerHTML='<span class="cd-label" style="color:#fff">The drop is closed. Matching in progress. ♡</span>';return;}
@@ -850,7 +849,7 @@ const D={
 
 /* modal */
 function openModal(){
-  if(Date.now() > new Date('2026-03-07T00:59:00Z').getTime()){
+  if(Date.now() > new Date('2026-03-08T00:59:00Z').getTime()){
     alert('Submissions for this drop have closed. Stay tuned for the next one.');
     return;
   }
